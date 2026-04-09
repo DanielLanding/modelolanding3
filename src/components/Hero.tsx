@@ -32,58 +32,74 @@ export default function Hero() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden pt-24 pb-12 lg:pt-0">
+    <section className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden pt-24 pb-4 lg:pb-12 lg:pt-0">
       <LeadFormModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-      {/* Imagem de Fundo customizada sem desfoque e escuridão */}
-      <div className="absolute inset-0 z-0">
+      {/* Imagem de Fundo Desktop */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="/CAPA-3-scaled.png"
-          alt="Background Hero"
+          alt="Background Hero Desktop"
           fill
           className="object-cover pointer-events-none"
           priority
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      {/* Imagem de Fundo Mobile */}
+      <div className="absolute inset-0 z-0 block md:hidden bg-black">
+        <Image
+          src="/Design-sem-nome.png"
+          alt="Background Hero Mobile"
+          fill
+          className="object-cover object-top pointer-events-none"
+          priority
+        />
+        {/* Gradiente adicional para garantir legibilidade no mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#000000] pointer-events-none" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 30%, #000000 65%, #000000 100%)" }}></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 w-full flex flex-col-reverse lg:grid lg:grid-cols-2 gap-4 md:gap-8 lg:gap-12 relative z-10 pt-0 md:pt-0 pb-4 lg:pb-0 h-full">
 
         {/* Left Column - Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-start gap-6 lg:pr-10"
+          className="flex flex-col items-center lg:items-start text-center lg:text-left gap-4 lg:gap-6 lg:pr-10 lg:pt-24"
         >
-          <div className="inline-flex items-center gap-2 border border-gray-800 rounded-full px-4 py-1.5 bg-transparent">
+          <div className="inline-flex items-center gap-2 border border-white/10 lg:border-white/5 rounded-full px-4 py-1.5 md:px-4 md:py-1.5 bg-black lg:bg-black/30 backdrop-blur-sm z-10">
             {/* Outline dot instead of target icon */}
             <div className="w-2.5 h-2.5 rounded-full border-2 border-white flex items-center justify-center">
-              <div className="w-0.5 h-0.5 bg-white rounded-full"></div>
+              <div className="w-[1.5px] h-[1.5px] bg-white rounded-full"></div>
             </div>
-            <span className="text-[10px] font-bold tracking-widest text-white uppercase mt-px">
+            <span className="text-[10px] md:text-[10px] font-bold tracking-widest text-white uppercase mt-px">
               + DE 6 ANOS DE EXPERIÊNCIA
             </span>
           </div>
 
-          <h1 className="text-4xl lg:text-[42px] font-poppins font-semibold text-white leading-[1.15] tracking-tight mt-2">
-            Fazemos seu <br /> Lançamento Completo<br />
-            do zero até as <br />
+          <h1 className="text-[24px] sm:text-[26px] md:text-4xl lg:text-[54px] font-poppins font-semibold text-white leading-[1.2] lg:leading-[1.1] tracking-tight mt-3 mb-2 px-2 lg:px-0">
+            Fazemos seu Lançamento <br />
+            Completo do zero até as <br />
             Primeiras Vendas
           </h1>
 
-          <p className="text-gray-300 text-[15px] font-inter leading-relaxed max-w-lg mt-2">
-            Mesmo que você esteja começando do zero, sem produto, sem<br className="hidden md:block" /> audiência e sem saber o que fazer...<br />
-            nós entramos com estratégia, execução e acompanhamento<br className="hidden md:block" /> pra colocar sua oferta no ar e vender.
+          <p className="text-gray-300 text-[12px] sm:text-[13px] md:text-[15px] lg:text-[18px] font-inter leading-[1.6] max-w-[340px] md:max-w-lg lg:max-w-[600px] mt-1 lg:mt-4 px-1 lg:px-0">
+            Mesmo que você esteja começando do zero, sem<br className="md:hidden" />
+            produto, sem audiência e sem saber o que fazer...<br className="md:hidden" />
+            nós entramos com estratégia, execução e<br className="md:hidden" />
+            acompanhamento pra colocar sua oferta no ar e<br className="md:hidden" />
+            vender.
           </p>
 
-          <div className="mt-4 w-full max-w-[420px]">
+          <div className="mt-3 lg:mt-6 w-full max-w-[420px] lg:max-w-[500px] flex flex-col items-center lg:items-start">
             <button
               onClick={() => setModalOpen(true)}
-              className="flex w-full items-center justify-center bg-[#FFD100] text-black font-semibold text-[13px] uppercase px-8 py-3.5 rounded-full hover:bg-yellow-400 transition-colors"
+              className="flex w-full items-center justify-center bg-[#FFD100] text-black font-semibold text-[13px] lg:text-[16px] uppercase px-8 py-4 lg:py-4 md:py-3.5 rounded-full hover:bg-yellow-400 transition-colors shadow-[0_0_15px_rgba(255,209,0,0.15)] tracking-wide"
             >
               QUERO LANÇAR MEU PRODUTO!
             </button>
-            <p className="mt-4 text-[#8b8b8b] text-[11px] font-inter leading-snug pr-4">
-              Feito para quem quer parar de rasgar dinheiro e brincar de<br /> marketing digital.
+            <p className="hidden md:block mt-4 lg:mt-5 text-[#8b8b8b] text-[11px] lg:text-[13px] font-inter leading-snug md:pr-4 px-4 lg:px-0">
+              Feito para quem quer parar de rasgar dinheiro e brincar de<br className="hidden md:block" /> marketing digital.
             </p>
           </div>
         </motion.div>
@@ -93,17 +109,17 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="relative w-full h-[600px] lg:h-[800px] flex items-end justify-center"
+          className="relative w-full h-[320px] md:h-[600px] lg:h-[800px] flex items-end justify-center pointer-events-none lg:pointer-events-auto"
         >
           {/* Floating Hotmart-style Cards */}
           <FloatingCard
             delay={0.2}
-            className="top-1/4 -left-8 lg:-left-20"
+            className="hidden lg:flex top-12 md:top-1/4 -left-4 md:-left-8 lg:-left-20 scale-[0.85] lg:scale-100"
             text="Venda realizada com Cartão"
           />
           <FloatingCard 
             delay={1.5} 
-            className="top-2/3 left-4 lg:left-10 scale-[0.8] lg:scale-75 origin-left opacity-90" 
+            className="top-6 sm:top-10 lg:top-2/3 -left-2 md:left-4 lg:left-10 scale-[0.70] md:scale-[0.8] lg:scale-75 origin-left opacity-90" 
             text="Venda realizada com Cartão de crédito" 
           />
 

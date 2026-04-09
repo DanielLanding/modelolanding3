@@ -75,7 +75,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   onChange={handleChange}
                   required
                   placeholder="Seu nome completo"
-                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
+                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-[16px] md:text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
                 />
               </div>
 
@@ -90,7 +90,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   onChange={handleChange}
                   required
                   placeholder="(11) 99999-9999"
-                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
+                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-[16px] md:text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
                 />
               </div>
 
@@ -105,13 +105,13 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
                   onChange={handleChange}
                   required
                   placeholder="seu@email.com"
-                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
+                  className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-[16px] md:text-sm placeholder-gray-600 focus:outline-none focus:border-[#FFD100]/60 transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
-                className="mt-2 w-full bg-[#FFD100] text-black font-semibold text-[13px] uppercase tracking-wide px-8 py-3.5 rounded-full hover:bg-yellow-400 transition-colors"
+                className="mt-4 w-full bg-[#FFD100] text-black font-semibold text-[13px] uppercase tracking-wide px-8 py-4 md:py-3.5 rounded-full hover:bg-yellow-400 transition-colors"
               >
                 Quero Lançar Meu Produto!
               </button>

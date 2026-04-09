@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Target, Flame } from "lucide-react";
+import LeadFormModal from "./LeadFormModal";
 
 const FloatingCard = ({ delay, className, text }: { delay: number, className: string, text: string }) => (
   <motion.div
@@ -27,8 +29,11 @@ const FloatingCard = ({ delay, className, text }: { delay: number, className: st
 );
 
 export default function Hero() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden pt-24 pb-12 lg:pt-0">
+      <LeadFormModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       {/* Imagem de Fundo customizada sem desfoque e escuridão */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -71,12 +76,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-4 w-full max-w-[420px]">
-            <a
-              href="#cta"
+            <button
+              onClick={() => setModalOpen(true)}
               className="flex w-full items-center justify-center bg-[#FFD100] text-black font-semibold text-[13px] uppercase px-8 py-3.5 rounded-full hover:bg-yellow-400 transition-colors"
             >
               QUERO LANÇAR MEU PRODUTO!
-            </a>
+            </button>
             <p className="mt-4 text-[#8b8b8b] text-[11px] font-inter leading-snug pr-4">
               Feito para quem quer parar de rasgar dinheiro e brincar de<br /> marketing digital.
             </p>

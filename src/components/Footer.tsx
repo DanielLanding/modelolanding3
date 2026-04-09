@@ -36,30 +36,11 @@ export default function Footer() {
           </div>
 
           <div className="text-gray-600 text-xs flex gap-2">
-            <span>Copyright © 2024, NEE Marketing.</span>
+            <span>Copyright © 2024, Ibraciv.</span>
             <a href="#" className="hover:text-white transition-colors">Políticas de Privacidade</a>
             <span>|</span>
             <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
           </div>
-        </div>
-
-        <div className="flex gap-4">
-          <a 
-            href="https://www.facebook.com/neemarketiing?locale=pt_BR" 
-            target="_blank" 
-            rel="noreferrer"
-            className="w-12 h-12 rounded-full bg-[#151515] flex items-center justify-center text-white hover:bg-[#FFB800] hover:text-black transition-colors"
-          >
-            <Facebook className="w-5 h-5" />
-          </a>
-          <a 
-            href="https://www.instagram.com/neemarketing_/" 
-            target="_blank" 
-            rel="noreferrer"
-            className="w-12 h-12 rounded-full bg-[#151515] flex items-center justify-center text-white hover:bg-[#FFB800] hover:text-black transition-colors"
-          >
-            <Instagram className="w-5 h-5" />
-          </a>
         </div>
         
       </div>

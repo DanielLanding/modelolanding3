@@ -63,7 +63,9 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
           </div>
         </div>
-        
+
+        </div>
+
       </div>
     </footer>
   );
